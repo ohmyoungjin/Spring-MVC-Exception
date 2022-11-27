@@ -25,6 +25,7 @@ public class ErrorPageController {
         printErrorInfo(request);
         return "error-page/404";
     }
+
     @RequestMapping("/error-page/500")
     public String errorPage500(HttpServletRequest request, HttpServletResponse response) {
         log.info("errorPage 500");
