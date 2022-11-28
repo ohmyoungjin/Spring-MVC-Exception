@@ -27,7 +27,12 @@ public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
                 //ExceptionResolver 가 없으면 예외 처리가 안되고, 기존에 발생한 예외를 서블릿 밖으로 던진다
                 //이 부분에서 예외는 처리가 된다.
                 return new ModelAndView();
+//            } else if (ex instanceof RuntimeException) {
+//                log.info("RuntimeException resolver to 500");
+//                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+//                return new ModelAndView();
             }
+
         } catch (IOException e) {
             log.info("resolver ex", e);
         }
