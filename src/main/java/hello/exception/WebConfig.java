@@ -31,7 +31,7 @@ public class WebConfig implements WebMvcConfigurer {
     /**
      * 기본 설정을 유지하면서 추가
      */
-    //새로 만든 ExceptionResolver 넣어주기
+    //새로 만든 ExceptionResolver 넣어주기***
     @Override
     public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
         resolvers.add(new MyHandlerExceptionResolver());
