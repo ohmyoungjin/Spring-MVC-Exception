@@ -25,7 +25,9 @@ public class ApiExceptionV2Controller {
         if (id.equals("user-ex")) {
             log.info("user-ex !! {}", id);
             throw new UserException("사용자 오류");
+
         }
+
         return new MemberDto(id, "hello" + id);
     }
 

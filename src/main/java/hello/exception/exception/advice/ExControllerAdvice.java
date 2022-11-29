@@ -2,6 +2,7 @@ package hello.exception.exception.advice;
 
 import hello.exception.api.ApiExceptionV2Controller;
 import hello.exception.exception.UserException;
+import hello.exception.exhandler.ErrorCodeResult;
 import hello.exception.exhandler.ErrorResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -35,8 +36,10 @@ public class ExControllerAdvice {
     public ResponseEntity<ErrorResult> userHandler(UserException e) {
         log.error("[exceptionHandler] ex", e);
         ErrorResult errorResult = new ErrorResult("USER-EX", e.getMessage());
+//        ErrorCodeResult errorCodeResult = ErrorCodeResult.BAD_REQUEST;
         //ResponseEntity 감싸서 반환한다
         return new ResponseEntity(errorResult, HttpStatus.BAD_REQUEST);
+//        return new ResponseEntity(errorCodeResult, HttpStatus.BAD_REQUEST);
     }
     //파라미터로 받은 Exception 이외에도 상속 받은 자식 Exception 까지 다 처리 해준다.
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
